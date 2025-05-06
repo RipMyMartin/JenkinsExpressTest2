@@ -4,6 +4,11 @@ pipeline {
     stages {
         stage('Create Text File') {
             steps {
+                echo 'touch testfile.txt'
+            }
+        }
+        stage('Text File') {
+            steps {
                 echo 'See on testfail' > testfile.txt
             }
         }
