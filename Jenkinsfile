@@ -2,24 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Create Text File') {
+        stage('Checkout') {
             steps {
-                sh 'touch testfile.txt'
+                checkout scm
             }
         }
-        stage('Write to Text File') {
+        stage('Install Node.js') {
             steps {
-                sh "echo 'See on testfail' > testfile.txt"
+                sh 'curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -'
+                sh 'sudo apt-get install -y nodejs'
             }
         }
-        stage('Display File Content') {
+        stage('Install Dependencies') {
             steps {
-                sh 'cat testfile.txt'
+                sh 'npm install'
             }
         }
-        stage('Show Name') {
+        stage('Run Application') {
             steps {
-                echo 'Minu nimi on Martin'
+                sh 'nohup npm start &'
             }
         }
     }
