@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = 3000;
+
+
+function hello(name) {
+  return "Minu lemmik majustus on " + name + "!";
+}
 
 app.get('/', (req, res) => {
-    res.send('Minu lemmikmagustoit on Tiramisu!');
+res.json({"text": hello("Terimisu")});
 });
 
-app.listen(port, () => {
-    console.log(`Rakendus töötab aadressil http://localhost:${port}`);
+if (require.main === module) {
+app.listen(PORT, () => {
+console.log(`App listening at http://localhost:${PORT}`);
 });
+}
+module.exports = { app, hello };
