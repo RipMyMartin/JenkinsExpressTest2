@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Create Text File') {
             steps {
-                echo 'touch testfile.txt'
+                sh 'touch testfile.txt'
             }
         }
-        stage('Text File') {
+        stage('Write to Text File') {
             steps {
-                echo 'See on testfail' > testfile.txt
+                sh "echo 'See on testfail' > testfile.txt"
             }
         }
         stage('Display File Content') {
