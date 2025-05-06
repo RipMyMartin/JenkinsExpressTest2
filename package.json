@@ -1,24 +1,15 @@
-{
-  "dependencies": {
-    "express": "^5.1.0"
-  },
-  "name": "jenkinsexpresstest2",
+
+  "name": "express",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-"dev":"node app.js"
- "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RipMyMartin/JenkinsExpressTest2.git"
+    "dev": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RipMyMartin/JenkinsExpressTest2/issues"
-  },
-  "homepage": "https://github.com/RipMyMartin/JenkinsExpressTest2#readme",
-  "description": ""
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
